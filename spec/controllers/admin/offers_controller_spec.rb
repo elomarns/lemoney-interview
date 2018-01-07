@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Admin::OffersController, type: :controller do
+  before(:each) do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user = FactoryBot.create(:user)
+    sign_in user
+  end
+
   let(:valid_attributes) do
     {
       advertiser_name: "GearBest",
