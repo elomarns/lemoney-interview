@@ -1,4 +1,4 @@
-module Admin::OfferHelper
+module Admin::OffersHelper
   def link_to_toggle_offer_status(offer)
     if offer.disabled?
       link_text = "Enable"

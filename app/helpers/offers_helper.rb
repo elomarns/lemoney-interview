@@ -1,4 +1,4 @@
-module OfferHelper
+module OffersHelper
   def link_to_offer_url(offer)
     if offer.premium?
       link_classes = "btn-large green"
