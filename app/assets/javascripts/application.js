@@ -2,3 +2,5 @@
 //= require turbolinks
 //= require jquery
 //= require materialize
+//= require jquery.datetimepicker.full.min
+//= require forms

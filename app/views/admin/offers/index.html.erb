@@ -1,34 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Offers</h1>
 
-<table>
+<table class="striped bordered responsive-table">
   <thead>
     <tr>
       <th>Id</th>
       <th>Name</th>
       <th>URL</th>
       <th>Status</th>
-      <th colspan="3">Actions</th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @offers.each do |offer| %>
-      <tr>
-        <td><%= offer.id %></td>
-        <td><%= offer.advertiser_name %></td>
-        <td><%= link_to offer.url, offer.url, target: :blank %></td>
-        <td><%= offer.status.capitalize %></td>
-        <td><%= link_to_toggle_offer_status(offer) %></td>
-        <td><%= link_to 'Edit', edit_admin_offer_path(offer) %></td>
-        <td><%= link_to 'Destroy', [:admin, offer], method: :delete,
-          data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @offers %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Offer', new_admin_offer_path %>
+<%= link_to 'New Offer', new_admin_offer_path,
+  class: "btn waves-effect waves-light" %>

@@ -1,32 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="section row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-content">
+        <p>
+          <strong>Advertiser name:</strong>
+          <%= @offer.advertiser_name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @offer.advertiser_name %>
-</p>
+        <p>
+          <strong>URL:</strong>
+          <%= link_to @offer.url, @offer.url, target: :blank %>
+        </p>
 
-<p>
-  <strong>URL:</strong>
-  <%= link_to @offer.url, @offer.url, target: :blank %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @offer.description %>
+        </p>
 
-<div>
-  <p>
-    <strong>Description:</strong>
-  </p>
+        <p>
+          <strong>Starts at:</strong>
+          <%= l @offer.starts_at, format: :short %>
+        </p>
 
-  <%= simple_format @offer.description %>
+        <p>
+          <strong>Ends at:</strong>
+          <%= l @offer.ends_at, format: :short %>
+        </p>
+      </div>
+
+      <div class="card-action">
+        <%= link_to 'Edit', edit_admin_offer_path(@offer), class: :btn %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<p>
-  <strong>Starts at:</strong>
-  <%= l @offer.starts_at %>
-</p>
-
-<p>
-  <strong>Ends at:</strong>
-  <%= l @offer.ends_at %>
-</p>
-
-<%= link_to 'Edit', edit_admin_offer_path(@offer) %> |
-<%= link_to 'Back', admin_offers_path %>

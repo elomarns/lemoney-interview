@@ -1,49 +1,52 @@
 <%= form_with(model: [:admin, offer], local: true) do |form| %>
-  <% if offer.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:
-      </h2>
-
-      <ul>
-        <% offer.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col s6 input-field">
+      <%= form.label :advertiser_name, class: :active %>
+      <%= form.text_field :advertiser_name, id: :offer_advertise_name %>
+      <%= validation_error_message_for @offer, :advertiser_name %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :advertiser_name %>
-    <%= form.text_field :advertiser_name, id: :offer_advertise_name %>
+    <div class="col s6 input-field">
+      <%= form.label :url, class: :active %>
+      <%= form.url_field :url, id: :offer_url %>
+      <%= validation_error_message_for @offer, :url %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 input-field">
+      <%= form.text_area :description, id: :offer_description,
+        class: "materialize-textarea", "data-length" => "500" %>
+      <%= form.label :description, class: :active %>
+      <%= validation_error_message_for @offer, :description %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6 input-field">
+      <%= form.label :starts_at, class: :active %>
+      <%= form.text_field :starts_at, id: :offer_starts_at,
+        class: :datetimepicker %>
+      <%= validation_error_message_for @offer, :starts_at %>
+    </div>
+
+    <div class="col s6 input-field">
+      <%= form.label :ends_at, class: :active %>
+      <%= form.text_field :ends_at, id: :offer_ends_at,
+        class: :datetimepicker %>
+      <%= validation_error_message_for @offer, :ends_at %>
+    </div>
   </div>
 
   <div class="field">
-    <%= form.label :url %>
-    <%= form.url_field :url, id: :offer_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :offer_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :starts_at %>
-    <%= form.datetime_select :starts_at, id: :offer_starts_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ends_at %>
-    <%= form.datetime_select :ends_at, id: :offer_ends_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :premium %>
     <%= form.check_box :premium, id: :offer_premium %>
+    <%= form.label :premium, class: :active %>
+    <%= validation_error_message_for @offer, :premium %>
   </div>
+
+  <br>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save", class: "btn waves-effect waves-light" %>
   </div>
 <% end %>

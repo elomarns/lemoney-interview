@@ -5,6 +5,8 @@ Rails.application.routes.draw do
         patch :toggle_status
       end
     end
+
+    root "offers#index"
   end
 
   root "offers#index"
