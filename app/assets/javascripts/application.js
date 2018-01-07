@@ -3,4 +3,5 @@
 //= require jquery
 //= require materialize
 //= require jquery.datetimepicker.full.min
+//= require base
 //= require forms
