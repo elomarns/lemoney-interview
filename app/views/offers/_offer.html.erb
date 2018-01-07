@@ -1,0 +1,19 @@
+<div class="col s12 m6">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title"><%= offer.advertiser_name %></span>
+
+      <% if offer.premium %>
+        <p class="premium red lighten-1 white-text">
+          Premium
+        </p>
+      <% end -%>
+
+      <%= simple_format offer.description %>
+    </div>
+
+    <div class="card-action">
+      <%= link_to_offer_url(offer) %>
+    </div>
+  </div>
+</div>
