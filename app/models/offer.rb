@@ -17,7 +17,9 @@ class Offer < ApplicationRecord
     where(status: "enabled").already_started.still_not_ended
   end
   scope :already_started, -> { where("starts_at <= ?", DateTime.now) }
-  scope :still_not_ended, -> { where("ends_at > ?", DateTime.now) }
+  scope :still_not_ended, -> do
+    where("ends_at > ?", DateTime.now).or(Offer.where(ends_at: nil))
+  end
   scope :newer_first, -> { order(id: :desc)}
   scope :premium_first, -> { order(premium: :desc)}
 
