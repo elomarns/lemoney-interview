@@ -1,5 +1,9 @@
-User.create(email: "elomarns@elomarns.com", password: "lemoney")
-User.create(email: "fj@lemoney.com", password: "lemoney")
+User.create(name: "Elomar Nascimento dos Santos",
+  email: "elomarns@elomarns.com",
+  password: "lemoney")
+User.create(name: "Lemoney",
+  email: "fj@lemoney.com",
+  password: "lemoney")
 
 Offer.create(advertiser_name: "GearBest",
   url: "https://www.gearbest.com/body-scale/pp_615115.html?utm_campaign=7941031&utm_source=cj&utm_medium=affiliate&from=affiliate_cj",

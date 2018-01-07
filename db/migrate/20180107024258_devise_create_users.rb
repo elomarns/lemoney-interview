@@ -19,6 +19,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      # Additional data
+      t.string :name
+
       t.timestamps null: false
     end
 
