@@ -12,15 +12,7 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper container">
-        <%= link_to "Lemoney Interview", root_path, class: "brand-logo" %>
-
-        <ul class="right">
-          <li><%= link_to "Admin", admin_root_path %></li>
-        </ul>
-      </div>
-    </nav>
+    <%= render "layouts/header" %>
 
     <div class="container">
       <%= flash_messages %>

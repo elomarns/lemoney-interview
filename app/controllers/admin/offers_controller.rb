@@ -1,4 +1,5 @@
 class Admin::OffersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_offer, only: [:show, :edit, :update, :toggle_status, :destroy]
 
   # GET /admin/offers
